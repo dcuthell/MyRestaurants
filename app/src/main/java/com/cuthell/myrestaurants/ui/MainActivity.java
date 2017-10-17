@@ -1,14 +1,15 @@
-package com.cuthell.myrestaurants;
+package com.cuthell.myrestaurants.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.cuthell.myrestaurants.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

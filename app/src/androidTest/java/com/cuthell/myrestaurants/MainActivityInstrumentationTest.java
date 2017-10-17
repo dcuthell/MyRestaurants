@@ -6,6 +6,8 @@ package com.cuthell.myrestaurants;
 
 import android.support.test.rule.ActivityTestRule;
 
+import com.cuthell.myrestaurants.ui.MainActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 
