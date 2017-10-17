@@ -1,11 +1,13 @@
 package com.cuthell.myrestaurants.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
 /**
  * Created by dcuthell on 10/17/2017.
  */
-
+@Parcel
 public class Restaurant {
     private String name;
     private String phone;
@@ -16,6 +18,10 @@ public class Restaurant {
     private double latitude;
     private double longitude;
     private ArrayList<String> categories = new ArrayList<>();
+
+    public Restaurant(){
+
+    }
 
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
