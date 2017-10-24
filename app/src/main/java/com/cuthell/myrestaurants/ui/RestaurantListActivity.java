@@ -1,12 +1,15 @@
 package com.cuthell.myrestaurants.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.cuthell.myrestaurants.Constants;
 import com.cuthell.myrestaurants.R;
 import com.cuthell.myrestaurants.adapters.RestaurantListAdapter;
 import com.cuthell.myrestaurants.models.Restaurant;
@@ -25,7 +28,8 @@ public class RestaurantListActivity extends AppCompatActivity {
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private RestaurantListAdapter mAdapter;
-
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
     public ArrayList<Restaurant> restaurants = new ArrayList<>();
 
     @Override
@@ -37,8 +41,13 @@ public class RestaurantListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
-        getRestaurants(location);
 
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        if(mRecentAddress != null){
+            getRestaurants(mRecentAddress);
+        }
 
     }
 
