@@ -3,6 +3,7 @@ package com.cuthell.myrestaurants.ui;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.cuthell.myrestaurants.R;
 import com.cuthell.myrestaurants.adapters.RestaurantPagerAdapter;
@@ -28,6 +29,9 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mRestaurants = Parcels.unwrap(getIntent().getParcelableExtra("restaurants"));
+
+        Log.d("TEEEEEEST", ""+getIntent().getIntExtra("position", 0));
+
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new RestaurantPagerAdapter(getSupportFragmentManager(), mRestaurants);
