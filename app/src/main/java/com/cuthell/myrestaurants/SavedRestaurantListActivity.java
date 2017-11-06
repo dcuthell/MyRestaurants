@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.cuthell.myrestaurants.adapters.FirebaseRestaurantViewHolder;
 import com.cuthell.myrestaurants.models.Restaurant;
@@ -40,7 +41,6 @@ public class SavedRestaurantListActivity extends AppCompatActivity {
                 .getInstance()
                 .getReference(Constants.FIREBASE_CHILD_RESTAURANTS)
                 .child(uid);
-
         setUpFirebaseAdapter();
     }
 
